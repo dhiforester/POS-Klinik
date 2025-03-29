@@ -1,0 +1,50 @@
+<?php
+    if(isset($SessionAkses)){
+        //panggil dari database
+        $QryAcc = mysqli_query($conn, "SELECT * FROM setting_acc WHERE akses='$SessionAkses'")or die(mysqli_error($conn));
+        $DataAcc = mysqli_fetch_array($QryAcc);
+        if(!empty($DataAcc['akses'])){
+            $acc_profile=$DataAcc['acc_profile'];
+            $acc_setting=$DataAcc['acc_setting'];
+            $acc_akses=$DataAcc['acc_akses'];
+            $acc_dokter=$DataAcc['acc_dokter'];
+            $acc_ruang_inap=$DataAcc['acc_ruang_inap'];
+            $acc_pasien=$DataAcc['acc_pasien'];
+            $acc_kunjungan=$DataAcc['acc_kunjungan'];
+            $acc_supplier=$DataAcc['acc_supplier'];
+            $acc_inventory=$DataAcc['acc_inventory'];
+            $acc_kasir=$DataAcc['acc_kasir'];
+            $acc_transaksi=$DataAcc['acc_transaksi'];
+            $acc_laporan=$DataAcc['acc_laporan'];
+            $acc_backup=$DataAcc['acc_backup'];
+        }else{
+            $acc_profile="No";
+            $acc_setting="No";
+            $acc_akses="No";
+            $acc_dokter="No";
+            $acc_ruang_inap="No";
+            $acc_pasien="No";
+            $acc_kunjungan="No";
+            $acc_supplier="No";
+            $acc_inventory="No";
+            $acc_kasir="No";
+            $acc_transaksi="No";
+            $acc_laporan="No";
+            $acc_backup="No";
+        }
+    }else{
+        $acc_profile="No";
+        $acc_setting="No";
+        $acc_akses="No";
+        $acc_dokter="No";
+        $acc_ruang_inap="No";
+        $acc_pasien="No";
+        $acc_kunjungan="No";
+        $acc_supplier="No";
+        $acc_inventory="No";
+        $acc_kasir="No";
+        $acc_transaksi="No";
+        $acc_laporan="No";
+        $acc_backup="No";
+    }
+?>
